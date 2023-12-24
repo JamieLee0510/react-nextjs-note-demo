@@ -6,7 +6,7 @@ export default async function EditPage({ params }) {
     const note = await getNote(noteId);
 
     const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-    await sleep(5000);
+    await sleep(1000);
 
     if (note === null) {
         return (

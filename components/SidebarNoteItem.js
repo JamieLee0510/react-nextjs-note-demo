@@ -10,7 +10,7 @@ const SidebarNoteItem = ({ noteId, note }) => {
             // 從服務端組件傳props到客戶端渲染組件，不可以是函數，但
             expandedChildren={
                 <p className="sidebar-note-excerpt">
-                    {content.substring(0, 20) || <i>(No content)</i>}
+                    {content ? content.substring(0, 20) : <i>(No content)</i>}
                 </p>
             }
         >
