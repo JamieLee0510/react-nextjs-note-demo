@@ -3,9 +3,9 @@ import dayjs from "dayjs";
 
 import SidebarNoteItem from "@/components/SidebarNoteItem";
 import { getAllNotes } from "@/lib/redis";
+import { sleep } from "@/lib/utils";
 
 const SidebarNoteList = async () => {
-    const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     await sleep(1000);
     const notes = await getAllNotes();
     const arr = Object.entries(notes);

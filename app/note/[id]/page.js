@@ -1,5 +1,6 @@
 import Note from "@/components/Note";
 import { getNote } from "@/lib/redis";
+import { sleep } from "@/lib/utils";
 
 const Page = async ({ params }) => {
     // 由動態路由來獲取 noteId
@@ -8,7 +9,6 @@ const Page = async ({ params }) => {
     const note = await getNote(noteId);
 
     // 測試 Suspense 效果
-    const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     await sleep(1000);
 
     if (note == null) {
